@@ -1,0 +1,36 @@
+﻿@page
+@model Bookstore.Pages.BooksModel
+@{
+    ViewData["Title"] = "Books";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Books</h1>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p class="card-text-subtitle">Lord of the Rings</p>
+                        <p class="card-text">
+                            The Lord of the Rings is an epic high fantasy novel written by English author and scholar J. R. R. Tolkien. 
+                            The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work. 
+                            Written in stages between 1937 and 1949, The Lord of the Rings is one of the best-selling novels ever written, 
+                            with over 150 million copies sold.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="btn btn-sm btn-outline-primary">Edit</a>
+                                <form>
+                                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                                </form>
+                            </div>
+                            <small class="text-muted">J.R.R. Tolkien</small>
+                            <small class="text-muted">13.05.1949</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

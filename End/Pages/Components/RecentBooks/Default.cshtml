@@ -1,0 +1,13 @@
+@model IEnumerable<Book>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="card-title">Recent Books</h2>
+        @foreach (var book in Model)
+        {
+            <div>
+                <span class="card-text">@book.Title</span>
+            </div>
+        }
+    </div>
+</div>

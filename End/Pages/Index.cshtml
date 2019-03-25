@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Home</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <cache expires-after="TimeSpan.FromSeconds(10)" vary-by-query="time">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">Caching sample</h2>
+                            <p>Current date: @DateTime.Now</p>
+                        </div>
+                    </div>
+                </cache>
+            </div>
+
+            <div class="col-md-4">
+                <partial name="ReusableWidget" model="@("I'm reusable !")" />
+            </div>
+
+            <div class="col-md-4">
+                <partial name="ReusableWidget" model="@("I'm reusable, too !")" />
+            </div>
+
+            <div class="col-md-4">
+                @await Component.InvokeAsync("RecentBooks", new { count = 2 })
+            </div>
+
+            <div class="col-md-4">
+                @* Use tag helper to render a view component *@
+                <vc:recent-books count="4" />
+            </div>
+
+        </div>
+    </div>
+</div>

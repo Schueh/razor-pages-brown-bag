@@ -1,0 +1,49 @@
+﻿@page "{id:int}"
+@model Bookstore.Pages.EditBookModel
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<div class="container">
+    <h1 class="mt-4 mb-3">
+        @Model.Book.Title
+    </h1>
+
+    <div class="row">
+        <div class="col-md-8 mb-4">
+            <form asp-page="EditBook" method="post">
+                <div asp-validation-summary="All" class="field-validation-error"></div>
+                <input asp-for="Book.Id" type="hidden" />
+
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label asp-for="Book.Title">Title:</label>
+                        <input asp-for="Book.Title" class="form-control" />
+                        <span asp-validation-for="Book.Title"></span>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label asp-for="Book.Author">Author:</label>
+                        <input asp-for="Book.Author" class="form-control">
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label asp-for="Book.Description">Description:</label>
+                        <textarea rows="10" cols="100" asp-for="Book.Description" class="form-control" style="resize:none"></textarea>
+                    </div>
+                </div>
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label asp-for="Book.ReleaseDate" type="date">Release Date:</label>
+                        <input asp-for="Book.ReleaseDate" class="form-control">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="saveButton">Save</button>
+                <a asp-page="Books" class="btn btn-secondary">Cancel</a>                
+            </form>
+        </div>
+    </div>
+</div>
